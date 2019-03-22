@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.controller" />
+	<mvc:resources mapping="/resources/**" location="/resources/theme/"  
+	cache-period="31556926"/>
+	
+
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles3.TilesView
+			</value>
+		</property>
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView"></property>
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/efarming?characterEncoding=latin1" />
+		<property name="username" value="root" />
+		<property name="password" value="root123" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml" />
+	</bean>
+	<tx:annotation-driven />
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="productService" class="com.services.ProductServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	   <bean id="imageService" class="com.services.ImageServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	   <bean id="eventService" class="com.services.EventServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	   <bean id="govermentpoliciesService" class="com.services.GovermentPoliciesServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	   <bean id="registrationService" class="com.services.RegistrationServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	<bean id="loginService" class="com.services.LoginServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	<bean id="FileUploadService" class="com.services.FileUploadServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	<bean id="ContactService" class="com.services.ContactServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	<bean id="EmailService" class="com.services.EmailServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	<bean id="QueryService" class="com.services.QueryServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>		
+	<bean id="AnswerService" class="com.services.AnswerServiceImpl">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+	<bean id="multipartResolver"   
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>  
+			
+</beans>

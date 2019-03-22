@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+<tiles-definitions>  
+    
+     <definition name="homebase.definition"  
+        template="/WEB-INF/jsp/homelayout.jsp">  
+         <put-attribute name="homeheader" value="/WEB-INF/jsp/homeheader.jsp" />  
+        <put-attribute name="body" value="" />  
+    <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />  
+    </definition>  
+     <definition name="base.definition"  
+        template="/WEB-INF/jsp/layout.jsp">  
+         <put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />  
+        <put-attribute name="body" value="" />  
+    <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />  
+    </definition>  
+     <definition name="adminbase.definition"  
+        template="/WEB-INF/jsp/adminlayout.jsp">  
+         <put-attribute name="adminheader" value="/WEB-INF/jsp/adminheader.jsp" />  
+        <put-attribute name="body" value="" />  
+    <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />  
+    </definition>  
+   <definition name="home" extends="homebase.definition">  
+        <put-attribute name="title" value="Home" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />  
+        
+    </definition>  
+    <definition name="product" extends="base.definition">  
+        <put-attribute name="title" value="Product" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/product.jsp" />  
+    </definition>  
+     
+      <definition name="event" extends="base.definition">  
+        <put-attribute name="title" value="Event" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/event.jsp" />  
+    </definition>
+   <definition name="govermentpolicies" extends="base.definition">  
+        <put-attribute name="title" value="GovermentPolicies" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/govermentpolicies.jsp" />  
+    </definition>
+      <definition name="contact" extends="base.definition">  
+        <put-attribute name="title" value="Contact" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/contact.jsp" />  
+    </definition>
+      <definition name="about" extends="base.definition">  
+        <put-attribute name="title" value="About" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/about.jsp" />  
+    </definition>
+    
+    <definition name="queries" extends="base.definition">  
+        <put-attribute name="title" value="Queries" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/queries.jsp" />  
+    </definition>
+    <definition name="problem" extends="base.definition">  
+        <put-attribute name="title" value="Problems" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/problem.jsp" />  
+    </definition>
+    <definition name="singleevent" extends="base.definition">  
+        <put-attribute name="title" value="SingleEvent" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/singleevent.jsp" />  
+    </definition>
+     <definition name="singleproduct" extends="base.definition">  
+        <put-attribute name="title" value="SingleProduct" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/singleproduct.jsp" />  
+    </definition>
+     <definition name="adminhome" extends="adminbase.definition">  
+        <put-attribute name="title" value="AdminHome" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/adminhome.jsp" />  
+        
+    </definition>  
+   <definition name="adminproduct" extends="adminbase.definition">  
+        <put-attribute name="title" value="AdminProduct" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/adminproduct.jsp" />  
+        
+    </definition>
+    <definition name="admingovermentpolicies" extends="adminbase.definition">  
+        <put-attribute name="title" value="AdminGovermentPolicies" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/admingovermentpolicies.jsp" />  
+        
+    </definition>
+    <definition name="adminevent" extends="adminbase.definition">  
+        <put-attribute name="title" value="AdminEvent" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/adminevent.jsp" />  
+        
+    </definition>  
+   <definition name="adminqueries" extends="adminbase.definition">  
+        <put-attribute name="title" value="AdminQueries" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/adminqueries.jsp" />  
+    </definition>
+    <definition name="adminuser" extends="adminbase.definition">  
+        <put-attribute name="title" value="AdminUser" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/adminuser.jsp" />  
+    </definition>
+    <definition name="companyproduct" extends="base.definition">  
+        <put-attribute name="title" value="AdminQueries" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/companyproduct.jsp" />  
+    </definition>
+    </tiles-definitions>
+    
+    
