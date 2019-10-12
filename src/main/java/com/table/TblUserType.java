@@ -9,15 +9,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_user_type")
 public class TblUserType {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "user_type_id")
 	private Long usertypeId;
-	
+
 	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "created_date")
 	private String createddate;
 
@@ -44,5 +44,5 @@ public class TblUserType {
 	public void setCreateddate(String createddate) {
 		this.createddate = createddate;
 	}
-	
+
 }

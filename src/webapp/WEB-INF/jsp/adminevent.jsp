@@ -55,12 +55,12 @@
 						</div>
 						<div class="form-group">
 							<label for="recipient-name" class="col-form-label">Date:</label>
-							Date: <input type="text" id="date" name="date"
+							 <input type="date" id="date" name="date"
 								placeholder="dd/mm/yy" />
 						</div>
 						<div class="form-group">
 							<label for="recipient-name" class="col-form-label">Time:</label>
-							Date: <input type="text" id="time" name="time"
+							 <input type="text" id="time" name="time"
 								placeholder="hh:mm:" />
 						</div>
 						<div class="form-group">

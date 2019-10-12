@@ -31,8 +31,8 @@ public class GovermentPoliciesServiceImpl implements GovermentPoliciesService {
 	@Transactional
 	public List<Object[]> listadminpolicies() {
 		Session session = sessionFactory.getCurrentSession();
-		String sqlQuery = "SELECT t.policyid,t.description,t.title,t.createdby,t.critearea,t.status FROM TblGovermentPolicies t";
-		Query query = session.createQuery(sqlQuery);
+		String sqlQuery = "SELECT t.policy_id,t.description,t.title,t.created_by,t.critearea,t.status FROM tbl_goverment_policies t ORDER BY `policy_id` DESC";
+		Query query = session.createSQLQuery(sqlQuery);
 		List<Object[]> govermentpoliciesList = query.list();
 		return govermentpoliciesList;
 	}

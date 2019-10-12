@@ -4,9 +4,9 @@
     <!-- /breadcrumb -->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
+            <a href="home.htm">Home</a>
         </li>
-        <li class="breadcrumb-item active">Single Page</li>
+        <li class="breadcrumb-item active">Dashbord</li>
     </ol>
     <!-- //breadcrumb -->
      <section class="banner-bottom-w3layouts py-lg-5 py-md-5 py-3">

@@ -16,8 +16,8 @@
 							<div class="card-body img">
 								<img src="eventimage.htm?eventid=${eventid}" alt="" class="img-fluid" height="400px" width="400px">
 								<figcaption>
-									<b>subject:</b>
-									<c:out value="${product[1]}" /> </br>place:<c:out
+									<b>Subject:</b>
+									<c:out value="${product[1]}" /> </br>Place:<c:out
 											value="${product[3]}" />
 									
 									<input type="hidden" id="userId" name="userId" value="<%=session.getAttribute("userId")%>">

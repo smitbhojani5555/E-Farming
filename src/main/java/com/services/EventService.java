@@ -18,6 +18,8 @@ public interface EventService {
 
 	String listregisteredfarmer(Long userId);
 
+	List<Object[]> listhomeevent();
+
 
 }
 

@@ -25,7 +25,7 @@ public class HomeController {
 	public ModelAndView redirect(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession(true);	
-		List<Object[]> eventList = eventService.listevent();
+		List<Object[]> eventList = eventService.listhomeevent();
 		mv.addObject("eventList", eventList);
 		mv.addObject("userId", session.getAttribute("userId"));
 		mv.addObject("isadmin", session.getAttribute("isadmin"));

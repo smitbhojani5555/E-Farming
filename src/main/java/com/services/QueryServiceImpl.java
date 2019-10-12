@@ -31,7 +31,7 @@ public class QueryServiceImpl implements QueryService {
 	@Transactional
 	public List<Object[]> listadminqueries() {
 		Session session = sessionFactory.getCurrentSession();
-		String sqlQuery = "SELECT u.first_name,u.data,p.subject,p.problem_id,p.farmer_id,p.description,p.status,p.created_date FROM tbl_problems p LEFT JOIN tbl_user u ON u.user_id=p.farmer_id";
+		String sqlQuery = "SELECT u.first_name,u.data,p.subject,p.problem_id,p.farmer_id,p.description,p.status,p.created_date FROM tbl_problems p LEFT JOIN tbl_user u ON u.user_id=p.farmer_id  ORDER BY `problem_id` DESC ";
 		Query query = session.createSQLQuery(sqlQuery);
 		List<Object[]> problemList = query.list();
 		return problemList;

@@ -33,8 +33,8 @@ public class LoginServiceImpl implements LoginService {
 	@Transactional
 	public List<Object[]> listUser() {
 		Session session = sessionFactory.getCurrentSession();
-		String sqlQuery = "SELECT t.id,t.firstname,t.lastname,t.status,t.email,t.password,t.userdocument,t.data,t.mobileno,t.usertype FROM TblUser t";
-		Query query = session.createQuery(sqlQuery);
+		String sqlQuery = "SELECT t.user_id,t.first_name,t.last_name,t.status,t.email,t.password,t.userdocument,t.data,t.mobile_no,t.user_type_id FROM tbl_user t  ORDER BY `user_id` DESC ";
+		Query query = session.createSQLQuery(sqlQuery);
 		List<Object[]> userList = query.list();
 		return userList;
 	}

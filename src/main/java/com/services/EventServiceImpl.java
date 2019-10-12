@@ -9,7 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.table.TblEvent;
-import com.table.TblProduct;
 import com.table.TblRegisteredfarmer;
 
 public class EventServiceImpl implements EventService {
@@ -33,8 +32,8 @@ public class EventServiceImpl implements EventService {
 	@Transactional
 	public List<Object[]> listadminevent() {
 		Session session = sessionFactory.getCurrentSession();
-		String sqlQuery = "SELECT t.eventid,t.subject,t.description,t.place,t.date,t.time,t.eventimage,t.status FROM TblEvent t ";
-		Query query = session.createQuery(sqlQuery);
+		String sqlQuery = "SELECT t.event_id,t.subject,t.description,t.place,t.date,t.time,t.event_image,t.status FROM tbl_event t ORDER BY `event_id` DESC ";
+		Query query = session.createSQLQuery(sqlQuery);
 		List<Object[]> eventList = query.list();
 		return eventList;
 
@@ -95,6 +94,17 @@ public class EventServiceImpl implements EventService {
 		tbl.setFarmerid(userId);
 		session.save(tbl);
 		return "success";
+
+	}
+
+	@Override
+	@Transactional
+	public List<Object[]> listhomeevent() {
+		Session session = sessionFactory.getCurrentSession();
+		String sqlQuery = "SELECT t.event_id,t.subject,t.description,t.place,t.date,t.time,t.event_image,t.status FROM tbl_event t WHERE t.status='1' LIMIT 6";
+		Query query = session.createSQLQuery(sqlQuery);
+		List<Object[]> productList = query.list();
+		return productList;
 
 	}
 }

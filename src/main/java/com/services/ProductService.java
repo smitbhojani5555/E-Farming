@@ -11,11 +11,9 @@ public interface ProductService {
 
 	List<Object[]> listproductdisplay(long productid);
 
-	
-	String addProduct(String productname, String string, String discription, long price, 
-			 byte[] file);
+	String addProduct(String productname, String string, String discription, long price, byte[] file);
 
-	 String removeproduct(long productid);
+	String removeproduct(long productid);
 
 	String deleteproduct(int status, int productid);
 
@@ -26,6 +24,4 @@ public interface ProductService {
 	String addcompanyProduct(String productname, long price, String discription, String productcontent, byte[] File,
 			long userId);
 
-
-	
 }

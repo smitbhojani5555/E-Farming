@@ -1,9 +1,9 @@
-<html> 
+<html>
 <head>
-<title>JSP forward action tag example</title>
+<title>E-Farming</title>
 </head>
-<body> 
-<p align="center">My main JSP page</p>
-<jsp:forward page="home.htm" /> 
-</body> 
+<body>
+	<p align="center">My main JSP page</p>
+	<jsp:forward page="home.htm" />
+</body>
 </html>
