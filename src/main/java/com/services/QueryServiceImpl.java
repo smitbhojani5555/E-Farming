@@ -47,7 +47,7 @@ public class QueryServiceImpl implements QueryService {
 	}
 
 	@Transactional
-	public String addUser(String subject, String discription, long farmerId,int status,String createddate) {
+	public String addUser(String subject, String discription, long farmerId, int status, String createddate) {
 		Session session = sessionFactory.getCurrentSession();
 		TblProblems tbl = new TblProblems();
 		tbl.setSubject(subject);
@@ -60,7 +60,7 @@ public class QueryServiceImpl implements QueryService {
 	}
 
 	@Transactional
-	public String addComment(String comment, long agronomistid, int problemid,String createddate1) {
+	public String addComment(String comment, long agronomistid, int problemid, String createddate1) {
 		Session session = sessionFactory.getCurrentSession();
 		TblComment tbl = new TblComment();
 		tbl.setComment(comment);
@@ -81,7 +81,6 @@ public class QueryServiceImpl implements QueryService {
 		return problemList;
 	}
 
-	@Override
 	@Transactional
 	public String removequery(int problemid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -93,7 +92,6 @@ public class QueryServiceImpl implements QueryService {
 
 	}
 
-	@Override
 	@Transactional
 	public String deletequery(int status, int problemid) {
 		Session session = sessionFactory.getCurrentSession();

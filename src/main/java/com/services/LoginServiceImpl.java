@@ -17,7 +17,6 @@ public class LoginServiceImpl implements LoginService {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> verifyUser(String Email, String password) {
 		Session session = sessionFactory.getCurrentSession();
@@ -38,7 +37,6 @@ public class LoginServiceImpl implements LoginService {
 		return userList;
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> verifyAdmin(String userName, String password) {
 		Session session = sessionFactory.getCurrentSession();
@@ -50,7 +48,6 @@ public class LoginServiceImpl implements LoginService {
 		return user;
 	}
 
-	@Override
 	@Transactional
 	public String removeuser(int userid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -62,7 +59,6 @@ public class LoginServiceImpl implements LoginService {
 
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> verifyforgotpassword(String userName, int usertype) {
 		Session session = sessionFactory.getCurrentSession();
@@ -74,7 +70,6 @@ public class LoginServiceImpl implements LoginService {
 		return user;
 	}
 
-	@Override
 	@Transactional
 	public String insertforgotpassword(String email, String createddate, String token, int status, int usertype) {
 		Session session = sessionFactory.getCurrentSession();
@@ -88,7 +83,6 @@ public class LoginServiceImpl implements LoginService {
 		return "success";
 	}
 
-	@Override
 	@Transactional
 	public List veryfyemail(String token) {
 		Session session = sessionFactory.getCurrentSession();
@@ -99,7 +93,6 @@ public class LoginServiceImpl implements LoginService {
 		return user;
 	}
 
-	@Override
 	@Transactional
 	public String updatePassword(String userId, String password) {
 		Session session = sessionFactory.getCurrentSession();
@@ -112,7 +105,6 @@ public class LoginServiceImpl implements LoginService {
 
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> getuserId(String usertype, String email) {
 		Session session = sessionFactory.getCurrentSession();
@@ -122,20 +114,18 @@ public class LoginServiceImpl implements LoginService {
 		query.setParameter("email", email);
 		List employeeId1 = query.list();
 		return employeeId1;
-		
+
 	}
 
-	@Override
 	@Transactional
 	public String deleteuser(int status, Long userId) {
 		Session session = sessionFactory.getCurrentSession();
 		String sqlQuery = "UPDATE tbl_user t  SET t.status=:status WHERE t.product_id=:productid";
 		Query query = session.createSQLQuery(sqlQuery);
-		query.setParameter("status",status);
-		query.setParameter("productid",userId);
-		query.executeUpdate();	
+		query.setParameter("status", status);
+		query.setParameter("productid", userId);
+		query.executeUpdate();
 		return "success";
-		
-		
+
 	}
 }

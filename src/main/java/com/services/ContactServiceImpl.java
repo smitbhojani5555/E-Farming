@@ -18,7 +18,6 @@ public class ContactServiceImpl implements ContactService{
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Override
 	@Transactional
 	public String addUser(String Name, String message, String Email) {
 		Session session = sessionFactory.getCurrentSession();
@@ -31,7 +30,6 @@ public class ContactServiceImpl implements ContactService{
 	}
 
 
-	@Override
 	@Transactional
 	public List<Object[]> listUser() {
 		Session session = sessionFactory.getCurrentSession();

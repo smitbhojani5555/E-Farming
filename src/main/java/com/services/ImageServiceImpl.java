@@ -15,7 +15,6 @@ public class ImageServiceImpl implements ImageService {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Override
 	@Transactional
 	public List<Object> listimageproduct(long productid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -28,7 +27,6 @@ public class ImageServiceImpl implements ImageService {
 
 	}
 
-	@Override
 	@Transactional
 	public List<Object> listimage(int eventid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -39,24 +37,20 @@ public class ImageServiceImpl implements ImageService {
 
 		return eventList;
 
-		
 	}
 
-	@Override
 	@Transactional
 	public List<Object> listeventimage(int eventid) {
 		Session session = sessionFactory.getCurrentSession();
 		String sqlQuery = "SELECT t.eventimage FROM TblEvent t WHERE t.eventid= :eventid";
 		Query query = session.createQuery(sqlQuery);
-		query.setParameter("eventid",eventid);
+		query.setParameter("eventid", eventid);
 		List<Object> imageList = query.list();
 
 		return imageList;
 
-		
 	}
 
-	@Override
 	@Transactional
 	public List<Object> listsingleproductimage(Long productid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -67,10 +61,8 @@ public class ImageServiceImpl implements ImageService {
 
 		return eventimageList;
 
-		
 	}
 
-	
 	@Transactional
 	public List<Object> listuserimage(Long userid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -80,10 +72,9 @@ public class ImageServiceImpl implements ImageService {
 		List<Object> userimageList = query.list();
 
 		return userimageList;
-		
+
 	}
 
-	@Override
 	@Transactional
 	public List<Object> listuserdocumentimage(Long userid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -93,13 +84,7 @@ public class ImageServiceImpl implements ImageService {
 		List<Object> userimageList = query.list();
 
 		return userimageList;
-		
-	
-	}
-		
+
 	}
 
-	
-
-	
-
+}

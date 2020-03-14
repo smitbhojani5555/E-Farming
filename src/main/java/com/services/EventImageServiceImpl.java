@@ -8,14 +8,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 public class EventImageServiceImpl implements EventImageService {
-	
+
 	private SessionFactory sessionFactory;
 
 	public EventImageServiceImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Override
 	@Transactional
 	public List<Object> listimage(int eventid) {
 		Session session = sessionFactory.getCurrentSession();

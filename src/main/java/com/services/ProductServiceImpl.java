@@ -36,7 +36,6 @@ public class ProductServiceImpl implements ProductService {
 		return product;
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> listproductdisplay(long productid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -47,7 +46,6 @@ public class ProductServiceImpl implements ProductService {
 		return productList;
 	}
 
-	@Override
 	@Transactional
 	public String addProduct(String productname, String discription, String productcontent, long price, byte[] File) {
 		Session session = sessionFactory.getCurrentSession();
@@ -70,7 +68,6 @@ public class ProductServiceImpl implements ProductService {
 		return "success";
 	}
 
-	@Override
 	@Transactional
 	public String deleteproduct(int status, int productid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -82,7 +79,6 @@ public class ProductServiceImpl implements ProductService {
 		return "success";
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> listcompanyproduct(long userId) {
 		Session session = sessionFactory.getCurrentSession();
@@ -93,7 +89,6 @@ public class ProductServiceImpl implements ProductService {
 		return product;
 	}
 
-	@Override
 	@Transactional
 	public String addcompanyProduct(String productname, long price, String discription, String productcontent,
 			byte[] File, long userId) {

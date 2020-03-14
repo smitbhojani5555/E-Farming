@@ -25,7 +25,7 @@ public class GovermentPoliciesServiceImpl implements GovermentPoliciesService {
 		List<Object[]> product = query.list();
 		return product;
 	}
-	
+
 	@Transactional
 	public List<Object[]> listadminpolicies() {
 		Session session = sessionFactory.getCurrentSession();
@@ -35,39 +35,37 @@ public class GovermentPoliciesServiceImpl implements GovermentPoliciesService {
 		return govermentpoliciesList;
 	}
 
-	@Override
 	@Transactional
-	public String addPolicies(String title, String discription, String createdby,String critearea,int status) {
+	public String addPolicies(String title, String discription, String createdby, String critearea, int status) {
 		Session session = sessionFactory.getCurrentSession();
-		TblGovermentPolicies tbl=new TblGovermentPolicies();
+		TblGovermentPolicies tbl = new TblGovermentPolicies();
 		tbl.setTitle(title);
-		tbl.setDescription(discription);;
+		tbl.setDescription(discription);
+		;
 		tbl.setCreatedby(createdby);
 		tbl.setCritearea(critearea);
 		tbl.setStatus(status);
 		session.save(tbl);
-		return "success";	
+		return "success";
 	}
 
-	
 	@Transactional
 	public String removeevent(int policyid) {
 		Session session = sessionFactory.getCurrentSession();
 		TblGovermentPolicies tbl = new TblGovermentPolicies();
 		tbl.setPolicyid(policyid);
 		session.delete(tbl);
-		return "success";	
+		return "success";
 	}
 
-	@Override
 	@Transactional
 	public String deletepolicies(int status, int policyid) {
 		Session session = sessionFactory.getCurrentSession();
 		String sqlQuery = "UPDATE tbl_goverment_policies t  SET t.status=:status WHERE t.policy_id=:policyid";
 		Query query = session.createSQLQuery(sqlQuery);
-		query.setParameter("status",status);
-		query.setParameter("policyid",policyid);
+		query.setParameter("status", status);
+		query.setParameter("policyid", policyid);
 		query.executeUpdate();
 		return "success";
-	}		
+	}
 }

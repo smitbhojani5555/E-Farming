@@ -73,7 +73,6 @@ public class EventServiceImpl implements EventService {
 		return "success";
 	}
 
-	@Override
 	@Transactional
 	public String deleteevent(int status, int eventid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -86,7 +85,6 @@ public class EventServiceImpl implements EventService {
 
 	}
 
-	@Override
 	@Transactional
 	public String listregisteredfarmer(Long userId) {
 		Session session = sessionFactory.getCurrentSession();
@@ -97,7 +95,6 @@ public class EventServiceImpl implements EventService {
 
 	}
 
-	@Override
 	@Transactional
 	public List<Object[]> listhomeevent() {
 		Session session = sessionFactory.getCurrentSession();
