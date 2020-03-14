@@ -8,7 +8,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.table.TblComment;
-import com.table.TblEvent;
 import com.table.TblProblems;
 
 public class QueryServiceImpl implements QueryService {

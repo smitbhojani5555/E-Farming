@@ -8,7 +8,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.table.TblForgotPassword;
-import com.table.TblUser;
 
 public class LoginServiceImpl implements LoginService {
 

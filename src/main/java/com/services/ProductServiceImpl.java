@@ -7,10 +7,8 @@ import javax.transaction.Transactional;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.table.TblProduct;
-import com.table.TblUser;
 
 public class ProductServiceImpl implements ProductService {
 
@@ -28,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
 		List<Object[]> product = query.list();
 		return product;
 	}
+
 	@Transactional
 	public List<Object[]> listadminproduct() {
 		Session session = sessionFactory.getCurrentSession();
@@ -36,6 +35,7 @@ public class ProductServiceImpl implements ProductService {
 		List<Object[]> product = query.list();
 		return product;
 	}
+
 	@Override
 	@Transactional
 	public List<Object[]> listproductdisplay(long productid) {
@@ -46,6 +46,7 @@ public class ProductServiceImpl implements ProductService {
 		List<Object[]> productList = query.list();
 		return productList;
 	}
+
 	@Override
 	@Transactional
 	public String addProduct(String productname, String discription, String productcontent, long price, byte[] File) {
@@ -59,6 +60,7 @@ public class ProductServiceImpl implements ProductService {
 		session.save(tbl);
 		return "success";
 	}
+
 	@Transactional
 	public String removeproduct(long productid) {
 		Session session = sessionFactory.getCurrentSession();
@@ -67,6 +69,7 @@ public class ProductServiceImpl implements ProductService {
 		session.delete(tbl);
 		return "success";
 	}
+
 	@Override
 	@Transactional
 	public String deleteproduct(int status, int productid) {
@@ -78,6 +81,7 @@ public class ProductServiceImpl implements ProductService {
 		query.executeUpdate();
 		return "success";
 	}
+
 	@Override
 	@Transactional
 	public List<Object[]> listcompanyproduct(long userId) {
@@ -88,6 +92,7 @@ public class ProductServiceImpl implements ProductService {
 		List<Object[]> product = query.list();
 		return product;
 	}
+
 	@Override
 	@Transactional
 	public String addcompanyProduct(String productname, long price, String discription, String productcontent,

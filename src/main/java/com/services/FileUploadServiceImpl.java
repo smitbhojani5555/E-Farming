@@ -2,7 +2,6 @@ package com.services;
 
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.table.TblUser;
 @Repository

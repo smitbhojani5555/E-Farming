@@ -7,9 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.table.TblEvent;
 import com.table.TblGovermentPolicies;
-import com.table.TblProduct;
 
 public class GovermentPoliciesServiceImpl implements GovermentPoliciesService {
 

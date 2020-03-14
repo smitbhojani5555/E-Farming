@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.services.AnswerService;
 import com.services.QueryService;
-import org.json.*;
 
 @Controller
 public class QueriesController {

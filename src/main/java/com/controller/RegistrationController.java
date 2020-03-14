@@ -20,7 +20,6 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.services.EmailService;
 import com.services.ImageService;
 import com.services.RegistrationService;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.table.TblUser;
 
 @Controller
