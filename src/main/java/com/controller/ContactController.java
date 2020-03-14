@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.services.ContactService;
 import com.services.EmailService;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 
 @Controller
 public class ContactController {
@@ -33,14 +32,13 @@ public class ContactController {
 	}
 
 	@RequestMapping("sendmessage.htm")
-	public ModelAndView insert(HttpServletRequest request, HttpServletResponse response) throws MessagingException {
+	public ModelAndView insert(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
 		contactService.addUser(request.getParameter("Name"), request.getParameter("message"),
 				request.getParameter("Email"));
 		try {
 			emailService.sendAshtml("efarmingcontact@gmail.com", request.getParameter("message"), "jaymataji");
 		} catch (javax.mail.MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

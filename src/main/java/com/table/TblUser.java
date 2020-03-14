@@ -1,4 +1,5 @@
 package com.table;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,42 +8,40 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
-import javax.swing.text.Position.Bias;
 
 @Entity
 @Table(name = "tbl_user")
 public class TblUser {
-	
 
 	@Id
 	@GeneratedValue
 	@Column(name = "user_id")
 	private Long id;
-	
-	@Column(name="first_name")
+
+	@Column(name = "first_name")
 	private String firstname;
-	
-	@Column(name="last_name")
+
+	@Column(name = "last_name")
 	private String lastname;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
-	@Column(name="email")
+
+	@Column(name = "email")
 	private String email;
-	
-	@Column(name="user_type_id")
+
+	@Column(name = "user_type_id")
 	private int usertype;
-	
-	@Column(name="status")
+
+	@Column(name = "status")
 	private String status;
-	
-	@Column(name="mobile_no")
+
+	@Column(name = "mobile_no")
 	private String mobileno;
-	
-	@Column(name="agronomist_type")
+
+	@Column(name = "agronomist_type")
 	private String agronomisttype;
-	
+
 	public String getAgronomisttype() {
 		return agronomisttype;
 	}
@@ -51,18 +50,18 @@ public class TblUser {
 		this.agronomisttype = agronomisttype2;
 	}
 
-	@Column(name="password")
+	@Column(name = "password")
 	private String password;
 	@Lob
-	@Basic(fetch=FetchType.LAZY)
-	@Column(name="data")
+	@Basic(fetch = FetchType.LAZY)
+	@Column(name = "data")
 	private byte[] data;
-	
+
 	@Lob
-	@Basic(fetch=FetchType.LAZY)
-	@Column(name="userdocument")
+	@Basic(fetch = FetchType.LAZY)
+	@Column(name = "userdocument")
 	private byte[] userdocument;
-	
+
 	public byte[] getUserdocument() {
 		return userdocument;
 	}
