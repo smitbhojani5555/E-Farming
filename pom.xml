@@ -176,7 +176,6 @@
 				<configuration>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<wtpversion>2.0</wtpversion>
 					<wtpContextName>/spring4upload</wtpContextName>
 				</configuration>
