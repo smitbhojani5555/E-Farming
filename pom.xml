@@ -10,7 +10,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<java-version>1.7</java-version>
-		<org.springframework-version>4.0.3.RELEASE</org.springframework-version>
+		<org.springframework-version>5.2.22.RELEASE</org.springframework-version>
 		<commons.fileupload.version>1.3.2</commons.fileupload.version>
 	</properties>
 	<dependencies>
